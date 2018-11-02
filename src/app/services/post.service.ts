@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { InternalStorageService } from './internal-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-
-  constructor() { }
+  constructor(private internalStorageService: InternalStorageService) { }
 }
