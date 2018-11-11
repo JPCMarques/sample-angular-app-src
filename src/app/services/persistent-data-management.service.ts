@@ -8,7 +8,7 @@ import { IPersistentData } from '../structure/persistentData';
 export abstract class PersistentDataManagementService<T extends IPersistentData> {
   @Output() dataStorageUpdated = new EventEmitter<{[index: string]: T}>();
 
-  private dataStorage: {[index: string]: T} = {};
+  dataStorage: {[index: string]: T} = {};
 
   constructor(private internalStorageService: InternalStorageService) {
     internalStorageService.getBucket(this.getBucketID()).then((storageBucket) => {
